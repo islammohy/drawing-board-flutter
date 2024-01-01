@@ -280,7 +280,8 @@ class CanvasSideBar extends HookWidget {
                       if (pngBytes != null) {
                         saveFile(pngBytes, 'png');
                         const snackBar = SnackBar(
-                          content: Text('Image saved in your app file directory'),
+                          content:
+                              Text('Image saved in your app file directory'),
                         );
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       }
@@ -296,7 +297,8 @@ class CanvasSideBar extends HookWidget {
                       if (pngBytes != null) {
                         saveFile(pngBytes, 'jpeg');
                         const snackBar = SnackBar(
-                          content: Text('Image saved in your app file directory'),
+                          content:
+                              Text('Image saved in your app file directory'),
                         );
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       }
@@ -323,10 +325,9 @@ class CanvasSideBar extends HookWidget {
         ..click();
     } else {
       await FileSaver.instance.saveFile(
-        'FlutterLetsDraw-${DateTime.now().toIso8601String()}.$extension',
-        bytes,
-        extension,
-        mimeType: extension == 'png' ? MimeType.PNG : MimeType.JPEG,
+        bytes: bytes,
+        mimeType: extension == 'png' ? MimeType.png : MimeType.jpeg,
+        name: 'FlutterLetsDraw-${DateTime.now().toIso8601String()}.$extension',
       );
     }
   }
